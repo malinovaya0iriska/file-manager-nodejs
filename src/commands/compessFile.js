@@ -13,8 +13,8 @@ export const compressFile = async (params) => {
       throw new Error(errorMessage);
     }
 
-    const { name } = path.parse(fileSourcePath);
-    const fileDestPath = path.resolve(pathToDestination, `${name}.br`);
+    const { base } = path.parse(fileSourcePath);
+    const fileDestPath = path.resolve(pathToDestination, `${base}.br`);
 
     const brotliCompress = createBrotliCompress();
     const source = createReadStream(fileSourcePath);
