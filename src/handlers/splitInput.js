@@ -2,7 +2,9 @@ import { chdir, cwd } from 'node:process';
 import { addFile } from '../commands/addFile.js';
 import { catToConsole } from '../commands/cat.js';
 import { cdHandler } from '../commands/cd.js';
+import { compressFile } from '../commands/compessFile.js';
 import { copyFile } from '../commands/copyFile.js';
+import { decompressFile } from '../commands/decompessFile.js';
 import { hashFilePath } from '../commands/hashFilePath.js';
 import { showListContent } from '../commands/list.js';
 import { moveFile } from '../commands/moveFile.js';
@@ -47,6 +49,14 @@ const handleEvents = (task, params) => {
       }
       case 'hash': {
         hashFilePath(params);
+        break;
+      }
+      case 'compress': {
+        compressFile(params);
+        break;
+      }
+      case 'decompress': {
+        decompressFile(params);
         break;
       }
       default:
