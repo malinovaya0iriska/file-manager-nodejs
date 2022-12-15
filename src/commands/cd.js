@@ -1,7 +1,8 @@
 import { chdir, cwd } from 'node:process';
 import { errorMessage } from '../constants.js';
 
-export const cdHandler = (params) => {
+export const cdHandler = ([params]) => {
+  console.log(params);
   try {
     chdir(params);
     console.log(`You are currently in ${cwd()}`);
