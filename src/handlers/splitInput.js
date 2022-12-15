@@ -5,6 +5,7 @@ import { cdHandler } from '../commands/cd.js';
 import { copyFile } from '../commands/copyFile.js';
 import { showListContent } from '../commands/list.js';
 import { moveFile } from '../commands/moveFile.js';
+import { removeFile } from '../commands/removeFile.js';
 import { renameFile } from '../commands/renameFile.js';
 import { upHandler } from '../commands/up.js';
 
@@ -35,6 +36,9 @@ const handleEvents = (task, params) => {
       case 'mv': {
         return moveFile(params);
       }
+      case 'rm': {
+        return removeFile(params);
+      }
       default:
         console.log('Invalid input');
     }
@@ -49,5 +53,4 @@ const handleEvents = (task, params) => {
     default:
       console.log('Invalid input');
   }
-  console.log(`You are currently in ${cwd()}`);
 };

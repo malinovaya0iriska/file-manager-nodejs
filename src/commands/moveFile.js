@@ -20,8 +20,7 @@ export const moveFile = (params) => {
         console.log(`You are currently in ${cwd()}`);
       })
       .pipe(writable);
-  } catch (error) {
-    console.log(error);
+  } catch {
     console.log(errorMessage);
   }
 };
